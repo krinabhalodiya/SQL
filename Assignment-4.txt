@@ -4,7 +4,7 @@ Then, a business rule will be added that will be triggered before every Update a
 and will use the stored procedure to verify that the Freight does not exceed the average freight. 
 If it does, a message will be displayed and the command will be cancelled.
 */
-CREATE PROCEDURE sp_ValidateFreight
+CREATE OR ALTER PROCEDURE sp_ValidateFreight
     @CustomerID nvarchar(5)
 AS
 BEGIN
@@ -20,7 +20,7 @@ SELECT * FROM Orders
 
 /*2)write a SQL query to Create Stored procedure in the Northwind database to retrieve Employee Sales by Country*/
 
-CREATE PROCEDURE  [dbo].[Sales_by_Country]
+CREATE OR ALTER PROCEDURE  [dbo].[Sales_by_Country]
 
 @COUNTRY  VARCHAR(50) 
 
@@ -46,7 +46,7 @@ END
 EXEC [dbo].[Sales_by_Country] @COUNTRY='uk'
 /*3)write a SQL query to Create Stored procedure in the Northwind database to retrieve Sales by Year*/
 
-CREATE PROCEDURE  [dbo].[Sales_by_Year] 
+CREATE OR ALTER PROCEDURE  [dbo].[Sales_by_Year] 
 
 @Year VARCHAR(50)
 
@@ -72,7 +72,7 @@ EXEC [dbo].[Sales_by_Year] @Year = '1996'
 
 /*4)write a SQL query to Create Stored procedure in the Northwind database to retrieve Sales By Category*/
 
-CREATE PROCEDURE  [dbo].[Sales_by_Category] 
+CREATE OR ALTER PROCEDURE  [dbo].[Sales_by_Category] 
 @CategoryName nvarchar(15)
 AS
 SELECT 
@@ -99,7 +99,7 @@ HAVING	[dbo].[Categories].[CategoryName] = @CategoryName
 EXEC [dbo].[Sales_by_Category] @CategoryName='beverages'
 
 /*5)write a SQL query to Create Stored procedure in the Northwind database to retrieve Ten Most Expensive Products*/
-CREATE PROCEDURE  [dbo].[Ten_Most_Expensive_Products]
+CREATE OR ALTER PROCEDURE  [dbo].[Ten_Most_Expensive_Products]
 
 AS
 BEGIN
