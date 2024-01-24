@@ -4,7 +4,6 @@ CREATE TABLE Department (
     dept_name NVARCHAR(255) NOT NULL
 );
 
--- Insert 25 entries into Department Table
 INSERT INTO Department (dept_id, dept_name)
 VALUES
     (1, 'Human Resources'),
@@ -23,7 +22,6 @@ CREATE TABLE Employee (
     salary DECIMAL(10, 2) NOT NULL
 );
 
--- Insert 25 entries into Employee Table
 INSERT INTO Employee (emp_id, dept_id, mngr_id, emp_name, salary)
 VALUES
     (1, 1, NULL, 'John Smith', 60000),
